@@ -4,8 +4,8 @@ from pygame import *
 
 #класс-родитель для спрайтов
 class GameSprite(sprite.Sprite):
-   def init(self, player_image, player_x, player_y, player_speed, wight, height):
-       super().init()
+   def __init__(self, player_image, player_x, player_y, player_speed, wight, height):
+       super().__init()
        self.image = transform.scale(image.load(player_image), (wight, height)) #вместе 55,55 - параметры
        self.speed = player_speed
        self.rect = self.image.get_rect()
